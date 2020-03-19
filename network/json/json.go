@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/name5566/leaf/chanrpc"
-	"github.com/name5566/leaf/log"
+	"github.com/zg-chang/leaf/chanrpc"
+	"github.com/zg-chang/leaf/log"
 	"reflect"
 )
 
@@ -94,7 +94,7 @@ func (p *Processor) SetRawHandler(msgID string, msgRawHandler MsgHandler) {
 }
 
 // goroutine safe
-func (p *Processor) Route(msg interface{}, userData interface{}) error {
+func (p *Processor) Route(msg interface{}, data []byte, userData interface{}) error {
 	// raw
 	if msgRaw, ok := msg.(MsgRaw); ok {
 		i, ok := p.msgInfo[msgRaw.msgID]

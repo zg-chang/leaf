@@ -1,9 +1,9 @@
 package gate
 
 import (
-	"github.com/name5566/leaf/chanrpc"
-	"github.com/name5566/leaf/log"
-	"github.com/name5566/leaf/network"
+	"github.com/zg-chang/leaf/chanrpc"
+	"github.com/zg-chang/leaf/log"
+	"github.com/zg-chang/leaf/network"
 	"net"
 	"reflect"
 	"time"
@@ -103,7 +103,7 @@ func (a *agent) Run() {
 				log.Debug("unmarshal message error: %v", err)
 				break
 			}
-			err = a.gate.Processor.Route(msg, a)
+			err = a.gate.Processor.Route(msg, data, a)
 			if err != nil {
 				log.Debug("route message error: %v", err)
 				break

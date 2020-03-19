@@ -1,11 +1,11 @@
 package leaf
 
 import (
-	"github.com/name5566/leaf/cluster"
-	"github.com/name5566/leaf/conf"
-	"github.com/name5566/leaf/console"
-	"github.com/name5566/leaf/log"
-	"github.com/name5566/leaf/module"
+	"github.com/zg-chang/leaf/cluster"
+	"github.com/zg-chang/leaf/conf"
+	"github.com/zg-chang/leaf/console"
+	"github.com/zg-chang/leaf/log"
+	"github.com/zg-chang/leaf/module"
 	"os"
 	"os/signal"
 )

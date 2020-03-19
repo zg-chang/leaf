@@ -2,9 +2,9 @@ package console
 
 import (
 	"fmt"
-	"github.com/name5566/leaf/chanrpc"
-	"github.com/name5566/leaf/conf"
-	"github.com/name5566/leaf/log"
+	"github.com/zg-chang/leaf/chanrpc"
+	"github.com/zg-chang/leaf/conf"
+	"github.com/zg-chang/leaf/log"
 	"os"
 	"path"
 	"runtime/pprof"

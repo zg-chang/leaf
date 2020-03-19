@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 	"github.com/golang/protobuf/proto"
-	"github.com/name5566/leaf/chanrpc"
-	"github.com/name5566/leaf/log"
+	"github.com/zg-chang/leaf/chanrpc"
+	"github.com/zg-chang/leaf/log"
 	"math"
 	"reflect"
 )
@@ -99,7 +99,7 @@ func (p *Processor) SetRawHandler(id uint16, msgRawHandler MsgHandler) {
 }
 
 // goroutine safe
-func (p *Processor) Route(msg interface{}, userData interface{}) error {
+func (p *Processor) Route(msg interface{}, data []byte, userData interface{}) error {
 	// raw
 	if msgRaw, ok := msg.(MsgRaw); ok {
 		if msgRaw.msgID >= uint16(len(p.msgInfo)) {
