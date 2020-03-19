@@ -102,7 +102,7 @@ func (p *Processor) Route(msg interface{}, data []byte, userData interface{}) er
 			return fmt.Errorf("message %v not registered", msgRaw.msgID)
 		}
 		if i.msgRawHandler != nil {
-			i.msgRawHandler([]interface{}{msgRaw.msgID, msgRaw.msgRawData, userData})
+			i.msgRawHandler([]interface{}{msgRaw.msgID, msgRaw.msgRawData, data, userData})
 		}
 		return nil
 	}
