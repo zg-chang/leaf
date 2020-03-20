@@ -135,6 +135,15 @@ func (a *agent) WriteMsg(msg interface{}) {
 	}
 }
 
+func (a *agent) WriteByte(data []byte,id uint16) {
+	if a.gate.Processor != nil {
+		err := a.conn.WriteMsg(data)
+		if err != nil {
+			log.Error("write message %d error: %v", id, err)
+		}
+	}
+}
+
 func (a *agent) LocalAddr() net.Addr {
 	return a.conn.LocalAddr()
 }

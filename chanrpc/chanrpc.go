@@ -167,7 +167,12 @@ func (s *Server) CallN(id interface{}, args ...interface{}) ([]interface{}, erro
 }
 
 func (s *Server) Close() {
-	close(s.ChanCall)
+	//优雅地关闭管道
+	select {
+	case <-s.ChanCall:
+	default:
+		close(s.ChanCall)
+	}
 
 	for ci := range s.ChanCall {
 		s.ret(ci, &RetInfo{
